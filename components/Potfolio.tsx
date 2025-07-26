@@ -188,6 +188,7 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
+      
       {/* About Section */}
       <section id="about" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -197,12 +198,12 @@ const Portfolio: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate software engineer with 5+ years of experience building 
+                I&apos;m a passionate software engineer with 5+ years of experience building 
                 web applications and mobile solutions. I love turning complex problems 
                 into simple, beautiful, and intuitive solutions.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, 
+                When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
                 contributing to open source projects, or sharing knowledge through 
                 technical writing and mentoring.
               </p>
@@ -239,7 +240,7 @@ const Portfolio: React.FC = () => {
             {skills.map((skill: Skill, index: number) => {
               const Icon = skill.icon;
               return (
-                <div key={skill.name} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+                <div key={`${index}_${skill.name}`} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
                   <div className="flex items-center mb-4">
                     <Icon size={32} className="text-blue-400 mr-3" />
                     <h3 className="text-xl font-semibold">{skill.name}</h3>
@@ -266,7 +267,7 @@ const Portfolio: React.FC = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project: Project, index: number) => (
-              <div key={project.title} className="group bg-white/5 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+              <div key={`${index}_${project.title}`} className="group bg-white/5 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
                 <div className="h-48 relative overflow-hidden" style={{ background: project.image }}>
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex gap-4">
@@ -304,7 +305,7 @@ const Portfolio: React.FC = () => {
           </h2>
           <div className="space-y-8">
             {experience.map((job: Experience, index: number) => (
-              <div key={job.company+index} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+              <div key={`${index}_${job.company}`} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-blue-400">{job.position}</h3>
@@ -323,11 +324,11 @@ const Portfolio: React.FC = () => {
       <section id="contact" className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects. 
-            Let's create something amazing together!
+            I&apos;m always open to discussing new opportunities and interesting projects. 
+            Let&apos;s create something amazing together!
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="mailto:alex@example.com" className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
